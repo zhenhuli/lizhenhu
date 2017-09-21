@@ -84,22 +84,24 @@
 	}
 </script>
 <script type="text/javascript">
-	var tit = document.querySelector('title');
-	var tit_html = tit.innerHTML;
-	var timer;
-	window.addEventListener('focus',f);
-	function f (){
-		clearTimeout(timer);
-		tit.innerHTML = '( •́ .̫ •̀ )被你发现了！***'+tit_html;
-		timer=setTimeout(function(){
-			tit.innerHTML = tit_html;
-		},2000);
-	}
-	window.addEventListener('blur',b);
-	function b (){
-		clearTimeout(timer);
-		tit.innerHTML = '( ´･◡･` )我藏好了哦！***'+tit_html;
-	}
+	(function(){
+		var tit = document.querySelector('title');
+		var tit_html = tit.innerHTML;
+		var timer;
+		window.addEventListener('focus',f);
+		function f (){
+			clearTimeout(timer);
+			tit.innerHTML = '( •́ .̫ •̀ )被你发现了！***'+tit_html;
+			timer=setTimeout(function(){
+				tit.innerHTML = tit_html;
+			},2000);
+		}
+		window.addEventListener('blur',b);
+		function b (){
+			clearTimeout(timer);
+			tit.innerHTML = '( ´･◡･` )我藏好了哦！***'+tit_html;
+		}
+	})()
 </script>
 
 </html>
